@@ -32,17 +32,17 @@ Yarn 1 workspaces monorepo per plan.md:
 
 **Purpose**: Monorepo scaffold, tooling, and workspace wiring
 
-- [ ] T001 Create root `package.json` with Yarn 1 workspaces `["apps/*", "packages/*"]` and scripts `test`, `lint`, `format` in `/Users/pavel/Personal/My_Projects/reminder/package.json`
-- [ ] T002 [P] Add root `tsconfig.base.json` with strict TypeScript paths for `@reminder/shared` in `/Users/pavel/Personal/My_Projects/reminder/tsconfig.base.json`
-- [ ] T003 [P] Add root `.eslintrc.cjs`, `.prettierrc`, and `eslint-config-prettier` integration in `/Users/pavel/Personal/My_Projects/reminder/.eslintrc.cjs` and `/Users/pavel/Personal/My_Projects/reminder/.prettierrc`
-- [ ] T004 [P] Create `packages/shared/package.json` with name `@reminder/shared`, `zod` dependency, and `src/index.ts` barrel in `/Users/pavel/Personal/My_Projects/reminder/packages/shared/package.json`
-- [ ] T005 [P] Create `apps/frontend/package.json` with React 19, Vite, Dexie, Jest, RTL, `fake-indexeddb`, and workspace dep `@reminder/shared` in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/package.json`
-- [ ] T006 [P] Add `apps/api/README.md` stub describing future Express/Fastify + Prisma in `/Users/pavel/Personal/My_Projects/reminder/apps/api/README.md`
-- [ ] T007 [P] Scaffold `apps/frontend/vite.config.ts` with `@vitejs/plugin-react`, path alias `@/` → `src/`, and `@reminder/shared` resolve in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/vite.config.ts`
-- [ ] T008 [P] Scaffold `apps/frontend/tsconfig.json` extending root base and mirroring Vite paths in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/tsconfig.json`
-- [ ] T009 [P] Scaffold `apps/frontend/jest.config.ts` with `ts-jest`, `jsdom`, `moduleNameMapper` matching Vite aliases in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/jest.config.ts`
-- [ ] T010 [P] Add `apps/frontend/index.html` and `apps/frontend/src/main.tsx` bootstrapping React root in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/index.html` and `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/src/main.tsx`
-- [ ] T011 [P] Add global design tokens in `apps/frontend/src/styles/variables.css` in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/src/styles/variables.css`
+- [X] T001 Create root `package.json` with Yarn 1 workspaces `["apps/*", "packages/*"]` and scripts `test`, `lint`, `format` in `/Users/pavel/Personal/My_Projects/reminder/package.json`
+- [X] T002 [P] Add root `tsconfig.base.json` with strict TypeScript paths for `@reminder/shared` in `/Users/pavel/Personal/My_Projects/reminder/tsconfig.base.json`
+- [X] T003 [P] Add root `.eslintrc.cjs`, `.prettierrc`, and `eslint-config-prettier` integration in `/Users/pavel/Personal/My_Projects/reminder/.eslintrc.cjs` and `/Users/pavel/Personal/My_Projects/reminder/.prettierrc`
+- [X] T004 [P] Create `packages/shared/package.json` with name `@reminder/shared`, `zod` dependency, and `src/index.ts` barrel in `/Users/pavel/Personal/My_Projects/reminder/packages/shared/package.json`
+- [X] T005 [P] Create `apps/frontend/package.json` with React 19, Vite, Dexie, Jest, RTL, `fake-indexeddb`, and workspace dep `@reminder/shared` in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/package.json`
+- [X] T006 [P] Add `apps/api/README.md` stub describing future Express/Fastify + Prisma in `/Users/pavel/Personal/My_Projects/reminder/apps/api/README.md`
+- [X] T007 [P] Scaffold `apps/frontend/vite.config.ts` with `@vitejs/plugin-react`, path alias `@/` → `src/`, and `@reminder/shared` resolve in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/vite.config.ts`
+- [X] T008 [P] Scaffold `apps/frontend/tsconfig.json` extending root base and mirroring Vite paths in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/tsconfig.json`
+- [X] T009 [P] Scaffold `apps/frontend/jest.config.ts` with `ts-jest`, `jsdom`, `moduleNameMapper` matching Vite aliases in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/jest.config.ts`
+- [X] T010 [P] Add `apps/frontend/index.html` and `apps/frontend/src/main.tsx` bootstrapping React root in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/index.html` and `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/src/main.tsx`
+- [X] T011 [P] Add global design tokens in `apps/frontend/src/styles/variables.css` in `/Users/pavel/Personal/My_Projects/reminder/apps/frontend/src/styles/variables.css`
 
 ---
 
@@ -52,20 +52,20 @@ Yarn 1 workspaces monorepo per plan.md:
 
 **⚠️ CRITICAL**: No user story implementation until this phase checkpoint passes
 
-- [ ] T012 [P] Implement `CategoryLabel` types and `FILTER_CATEGORIES` / `WORK_LABELS` in `packages/shared/src/constants/categories.ts` per FR-004
-- [ ] T013 [P] Implement `Work` and `JournalEntry` TypeScript types in `packages/shared/src/types/journal.ts` aligned with data-model.md
-- [ ] T014 [P] Implement `workSchema`, `journalEntrySchema`, and `categoryLabelSchema` in `packages/shared/src/schemas/journalSchemas.ts` per contracts/journal-schemas.md
-- [ ] T015 [P] Export public API from `packages/shared/src/index.ts` (types, schemas, categories, repository interface)
-- [ ] T016 [P] Define `JournalRepository` interface in `packages/shared/src/repositories/JournalRepository.ts` per contracts/JournalRepository.md
-- [ ] T017 Implement Dexie schema v1 (`journalEntries`, `trashEntries`, `meta`) in `apps/frontend/src/data/db.ts`
-- [ ] T018 Implement `DexieJournalRepository` with `listActive`, `getById`, `save`, `moveToTrash`, `countActive`, `isStorageEmpty`, `hasSeeded`, `markSeeded` in `apps/frontend/src/data/repositories/DexieJournalRepository.ts`
-- [ ] T019 [P] Add Jest setup importing `@testing-library/jest-dom` and `fake-indexeddb/auto` in `apps/frontend/src/test/setup.ts`
-- [ ] T020 [P] Add shared UI primitives `Button` and `ConfirmDialog` in `apps/frontend/src/shared/ui/Button.tsx` and `apps/frontend/src/shared/ui/ConfirmDialog.tsx`
-- [ ] T021 [P] Implement `countPendingReminderWorks` in `apps/frontend/src/domain/pendingReminders.ts` per data-model.md derived rules
-- [ ] T022 [P] Add English Zod error mapping in `apps/frontend/src/features/journal/validationMessages.ts` for SC-006
-- [ ] T023 Wire `App.tsx` with repository instance, bootstrap hook, and seed guard entry point in `apps/frontend/src/App.tsx`
-- [ ] T024 Create nested shell layout and route table in `apps/frontend/src/app/routes.tsx` and `apps/frontend/src/App.tsx` (paths: `/`, `/journal`, `/reminders`, placeholders)
-- [ ] T025 [P] Add minimal shell styles in `apps/frontend/src/app/shell/shell.module.css` importing `variables.css`
+- [X] T012 [P] Implement `CategoryLabel` types and `FILTER_CATEGORIES` / `WORK_LABELS` in `packages/shared/src/constants/categories.ts` per FR-004
+- [X] T013 [P] Implement `Work` and `JournalEntry` TypeScript types in `packages/shared/src/types/journal.ts` aligned with data-model.md
+- [X] T014 [P] Implement `workSchema`, `journalEntrySchema`, and `categoryLabelSchema` in `packages/shared/src/schemas/journalSchemas.ts` per contracts/journal-schemas.md
+- [X] T015 [P] Export public API from `packages/shared/src/index.ts` (types, schemas, categories, repository interface)
+- [X] T016 [P] Define `JournalRepository` interface in `packages/shared/src/repositories/JournalRepository.ts` per contracts/JournalRepository.md
+- [X] T017 Implement Dexie schema v1 (`journalEntries`, `trashEntries`, `meta`) in `apps/frontend/src/data/db.ts`
+- [X] T018 Implement `DexieJournalRepository` with `listActive`, `getById`, `save`, `moveToTrash`, `countActive`, `isStorageEmpty`, `hasSeeded`, `markSeeded` in `apps/frontend/src/data/repositories/DexieJournalRepository.ts`
+- [X] T019 [P] Add Jest setup importing `@testing-library/jest-dom` and `fake-indexeddb/auto` in `apps/frontend/src/test/setup.ts`
+- [X] T020 [P] Add shared UI primitives `Button` and `ConfirmDialog` in `apps/frontend/src/shared/ui/Button.tsx` and `apps/frontend/src/shared/ui/ConfirmDialog.tsx`
+- [X] T021 [P] Implement `countPendingReminderWorks` in `apps/frontend/src/domain/pendingReminders.ts` per data-model.md derived rules
+- [X] T022 [P] Add English Zod error mapping in `apps/frontend/src/features/journal/validationMessages.ts` for SC-006
+- [X] T023 Wire `App.tsx` with repository instance, bootstrap hook, and seed guard entry point in `apps/frontend/src/App.tsx`
+- [X] T024 Create nested shell layout and route table in `apps/frontend/src/app/routes.tsx` and `apps/frontend/src/App.tsx` (paths: `/`, `/journal`, `/reminders`, placeholders)
+- [X] T025 [P] Add minimal shell styles in `apps/frontend/src/app/shell/shell.module.css` importing `variables.css`
 
 **Checkpoint**: `yarn workspace @reminder/frontend test` runs (0 tests OK); Dexie + shared package compile; routes render shell + stubs
 
@@ -81,18 +81,18 @@ Yarn 1 workspaces monorepo per plan.md:
 
 > **NOTE: Write these tests FIRST; ensure they FAIL before implementation**
 
-- [ ] T026 [P] [US1] Add RTL test for save, list update, cancel, and double-save guard in `apps/frontend/src/__tests__/journal.create.test.tsx` per plan test matrix
+- [X] T026 [P] [US1] Add RTL test for save, list update, cancel, and double-save guard in `apps/frontend/src/__tests__/journal.create.test.tsx` per plan test matrix
 
 ### Implementation for User Story 1
 
-- [ ] T027 [P] [US1] Implement `WorkEditor` for work fields, label cloud, and criterion targets in `apps/frontend/src/features/journal/WorkEditor.tsx`
-- [ ] T028 [P] [US1] Implement `EntryForm` with Cancel/Save, `isSaving` guard, and Zod parse via `@reminder/shared` in `apps/frontend/src/features/journal/EntryForm.tsx`
-- [ ] T029 [US1] Implement `EntryList` row display with date/odometer header emphasis hooks in `apps/frontend/src/features/journal/EntryList.tsx`
-- [ ] T030 [US1] Implement `JournalPage` two-column layout wiring form + list + repository in `apps/frontend/src/features/journal/JournalPage.tsx`
-- [ ] T031 [P] [US1] Add Journal feature styles in `apps/frontend/src/features/journal/journal.module.css`
-- [ ] T032 [US1] Connect Save/Cancel to `DexieJournalRepository.save` and draft reset in `apps/frontend/src/features/journal/EntryForm.tsx`
-- [ ] T033 [US1] Recompute and persist `totalCost` on save per FR-007 in `apps/frontend/src/features/journal/EntryForm.tsx`
-- [ ] T034 [US1] Insert new works at top of `works` array per FR-009 in `apps/frontend/src/features/journal/EntryForm.tsx`
+- [X] T027 [P] [US1] Implement `WorkEditor` for work fields, label cloud, and criterion targets in `apps/frontend/src/features/journal/WorkEditor.tsx`
+- [X] T028 [P] [US1] Implement `EntryForm` with Cancel/Save, `isSaving` guard, and Zod parse via `@reminder/shared` in `apps/frontend/src/features/journal/EntryForm.tsx`
+- [X] T029 [US1] Implement `EntryList` row display with date/odometer header emphasis hooks in `apps/frontend/src/features/journal/EntryList.tsx`
+- [X] T030 [US1] Implement `JournalPage` two-column layout wiring form + list + repository in `apps/frontend/src/features/journal/JournalPage.tsx`
+- [X] T031 [P] [US1] Add Journal feature styles in `apps/frontend/src/features/journal/journal.module.css`
+- [X] T032 [US1] Connect Save/Cancel to `DexieJournalRepository.save` and draft reset in `apps/frontend/src/features/journal/EntryForm.tsx`
+- [X] T033 [US1] Recompute and persist `totalCost` on save per FR-007 in `apps/frontend/src/features/journal/EntryForm.tsx`
+- [X] T034 [US1] Insert new works at top of `works` array per FR-009 in `apps/frontend/src/features/journal/EntryForm.tsx`
 
 **Checkpoint**: US1 tests pass; manual US1 quickstart item passes
 
@@ -106,15 +106,15 @@ Yarn 1 workspaces monorepo per plan.md:
 
 ### Tests for User Story 2
 
-- [ ] T035 [P] [US2] Add RTL tests for Brakes filter, date sort, odometer default, reverse toggle, and 20+ entry fixture in `apps/frontend/src/__tests__/journal.filter-sort.test.tsx` (SC-003/SC-004)
+- [X] T035 [P] [US2] Add RTL tests for Brakes filter, date sort, odometer default, reverse toggle, and 20+ entry fixture in `apps/frontend/src/__tests__/journal.filter-sort.test.tsx` (SC-003/SC-004)
 
 ### Implementation for User Story 2
 
-- [ ] T036 [P] [US2] Implement `CategoryFilters` with fixed FR-004 list and All default in `apps/frontend/src/features/journal/CategoryFilters.tsx`
-- [ ] T037 [US2] Implement client-side filter (entry included if any work has label) in `apps/frontend/src/features/journal/JournalPage.tsx`
-- [ ] T038 [US2] Implement sort state (odometer desc default, date recent-first, reverse) and `orderBy` load strategy in `apps/frontend/src/features/journal/JournalPage.tsx` and `apps/frontend/src/data/repositories/DexieJournalRepository.ts`
-- [ ] T039 [US2] Update `EntryList` header emphasis for date-first vs odometer-first per FR-005 in `apps/frontend/src/features/journal/EntryList.tsx`
-- [ ] T040 [P] [US2] Add test fixture builder `apps/frontend/src/__tests__/fixtures/journalEntries.fixture.ts` for 20+ varied entries
+- [X] T036 [P] [US2] Implement `CategoryFilters` with fixed FR-004 list and All default in `apps/frontend/src/features/journal/CategoryFilters.tsx`
+- [X] T037 [US2] Implement client-side filter (entry included if any work has label) in `apps/frontend/src/features/journal/JournalPage.tsx`
+- [X] T038 [US2] Implement sort state (odometer desc default, date recent-first, reverse) and `orderBy` load strategy in `apps/frontend/src/features/journal/JournalPage.tsx` and `apps/frontend/src/data/repositories/DexieJournalRepository.ts`
+- [X] T039 [US2] Update `EntryList` header emphasis for date-first vs odometer-first per FR-005 in `apps/frontend/src/features/journal/EntryList.tsx`
+- [X] T040 [P] [US2] Add test fixture builder `apps/frontend/src/__tests__/fixtures/journalEntries.fixture.ts` for 20+ varied entries
 
 **Checkpoint**: US2 tests pass; filter/sort verifiable on seed data
 
@@ -128,13 +128,13 @@ Yarn 1 workspaces monorepo per plan.md:
 
 ### Tests for User Story 3
 
-- [ ] T041 [P] [US3] Add RTL validation tests (101 chars, zero works, missing targets, whitespace, non-numeric odometer, negative cost) in `apps/frontend/src/__tests__/journal.validation.test.tsx`
+- [X] T041 [P] [US3] Add RTL validation tests (101 chars, zero works, missing targets, whitespace, non-numeric odometer, negative cost) in `apps/frontend/src/__tests__/journal.validation.test.tsx`
 
 ### Implementation for User Story 3
 
-- [ ] T042 [US3] Map Zod `path` issues to `validationMessages.ts` strings inline in `apps/frontend/src/features/journal/EntryForm.tsx`
-- [ ] T043 [US3] Apply save-time normalization (trim, General default, strip irrelevant targets) before `save` in `apps/frontend/src/features/journal/EntryForm.tsx`
-- [ ] T044 [US3] Block persist when `safeParse` fails in `apps/frontend/src/features/journal/EntryForm.tsx`
+- [X] T042 [US3] Map Zod `path` issues to `validationMessages.ts` strings inline in `apps/frontend/src/features/journal/EntryForm.tsx`
+- [X] T043 [US3] Apply save-time normalization (trim, General default, strip irrelevant targets) before `save` in `apps/frontend/src/features/journal/EntryForm.tsx`
+- [X] T044 [US3] Block persist when `safeParse` fails in `apps/frontend/src/features/journal/EntryForm.tsx`
 
 **Checkpoint**: US3 tests pass; SC-006 messages human-readable
 
@@ -148,14 +148,14 @@ Yarn 1 workspaces monorepo per plan.md:
 
 ### Tests for User Story 4
 
-- [ ] T045 [P] [US4] Add RTL delete confirm/cancel tests in `apps/frontend/src/__tests__/journal.delete.test.tsx`
-- [ ] T046 [P] [US4] Add `DexieJournalRepository.moveToTrash` unit tests with `fake-indexeddb` in `apps/frontend/src/__tests__/DexieJournalRepository.test.ts`
+- [X] T045 [P] [US4] Add RTL delete confirm/cancel tests in `apps/frontend/src/__tests__/journal.delete.test.tsx`
+- [X] T046 [P] [US4] Add `DexieJournalRepository.moveToTrash` unit tests with `fake-indexeddb` in `apps/frontend/src/__tests__/DexieJournalRepository.test.ts`
 
 ### Implementation for User Story 4
 
-- [ ] T047 [US4] Wire entry Delete control to `ConfirmDialog` in `apps/frontend/src/features/journal/EntryList.tsx`
-- [ ] T048 [US4] Implement `moveToTrash` with `deletedAt` and active-store removal in `apps/frontend/src/data/repositories/DexieJournalRepository.ts`
-- [ ] T049 [US4] Refresh Journal list after successful delete in `apps/frontend/src/features/journal/JournalPage.tsx`
+- [X] T047 [US4] Wire entry Delete control to `ConfirmDialog` in `apps/frontend/src/features/journal/EntryList.tsx`
+- [X] T048 [US4] Implement `moveToTrash` with `deletedAt` and active-store removal in `apps/frontend/src/data/repositories/DexieJournalRepository.ts`
+- [X] T049 [US4] Refresh Journal list after successful delete in `apps/frontend/src/features/journal/JournalPage.tsx`
 
 **Checkpoint**: US4 tests pass; deleted entries absent from `listActive`
 
@@ -169,18 +169,18 @@ Yarn 1 workspaces monorepo per plan.md:
 
 ### Tests for User Story 5
 
-- [ ] T050 [P] [US5] Add RTL shell navigation, placeholder routes, and badge tests in `apps/frontend/src/__tests__/shell.navigation.test.tsx` (SC-005)
+- [X] T050 [P] [US5] Add RTL shell navigation, placeholder routes, and badge tests in `apps/frontend/src/__tests__/shell.navigation.test.tsx` (SC-005)
 
 ### Implementation for User Story 5
 
-- [ ] T051 [P] [US5] Implement gradient `Header` with title and menu control in `apps/frontend/src/app/shell/Header.tsx`
-- [ ] T052 [P] [US5] Implement `SideMenu` desktop push vs mobile overlay close behavior in `apps/frontend/src/app/shell/SideMenu.tsx`
-- [ ] T053 [P] [US5] Implement `HomePage` tiles for Journal, Reminders, Categories, About, FAQ, Trash, Settings in `apps/frontend/src/app/shell/HomePage.tsx`
-- [ ] T054 [P] [US5] Implement `RemindersBadge` using `pendingReminders.ts` in `apps/frontend/src/app/shell/RemindersBadge.tsx`
-- [ ] T055 [P] [US5] Implement generic `PlaceholderPage` in `apps/frontend/src/features/placeholders/PlaceholderPage.tsx`
-- [ ] T056 [P] [US5] Implement `RemindersPlaceholder` copy per FR-011 in `apps/frontend/src/features/placeholders/RemindersPlaceholder.tsx`
-- [ ] T057 [US5] Register all shell routes in `apps/frontend/src/app/routes.tsx` with shell `<Outlet />` layout
-- [ ] T058 [US5] Refresh badge after Journal save/delete via shared refresh in `apps/frontend/src/App.tsx` and `apps/frontend/src/app/shell/RemindersBadge.tsx`
+- [X] T051 [P] [US5] Implement gradient `Header` with title and menu control in `apps/frontend/src/app/shell/Header.tsx`
+- [X] T052 [P] [US5] Implement `SideMenu` desktop push vs mobile overlay close behavior in `apps/frontend/src/app/shell/SideMenu.tsx`
+- [X] T053 [P] [US5] Implement `HomePage` tiles for Journal, Reminders, Categories, About, FAQ, Trash, Settings in `apps/frontend/src/app/shell/HomePage.tsx`
+- [X] T054 [P] [US5] Implement `RemindersBadge` using `pendingReminders.ts` in `apps/frontend/src/app/shell/RemindersBadge.tsx`
+- [X] T055 [P] [US5] Implement generic `PlaceholderPage` in `apps/frontend/src/features/placeholders/PlaceholderPage.tsx`
+- [X] T056 [P] [US5] Implement `RemindersPlaceholder` copy per FR-011 in `apps/frontend/src/features/placeholders/RemindersPlaceholder.tsx`
+- [X] T057 [US5] Register all shell routes in `apps/frontend/src/app/routes.tsx` with shell `<Outlet />` layout
+- [X] T058 [US5] Refresh badge after Journal save/delete via shared refresh in `apps/frontend/src/App.tsx` and `apps/frontend/src/app/shell/RemindersBadge.tsx`
 
 **Checkpoint**: US5 tests pass; FR-001–FR-002, FR-014 navigation satisfied
 
@@ -194,12 +194,12 @@ Yarn 1 workspaces monorepo per plan.md:
 
 ### Tests for User Story 6
 
-- [ ] T059 [P] [US6] Add unit tests for eligibility rules (Mileage, Date, on_breakdown, done flag) in `apps/frontend/src/__tests__/pendingReminders.test.ts`
+- [X] T059 [P] [US6] Add unit tests for eligibility rules (Mileage, Date, on_breakdown, done flag) in `apps/frontend/src/__tests__/pendingReminders.test.ts`
 
 ### Implementation for User Story 6
 
-- [ ] T060 [US6] Ensure `WorkEditor` criterion UI enforces target fields for Mileage/Date only in `apps/frontend/src/features/journal/WorkEditor.tsx`
-- [ ] T061 [US6] Verify badge recomputation after save uses active entries only in `apps/frontend/src/domain/pendingReminders.ts` and `apps/frontend/src/app/shell/RemindersBadge.tsx`
+- [X] T060 [US6] Ensure `WorkEditor` criterion UI enforces target fields for Mileage/Date only in `apps/frontend/src/features/journal/WorkEditor.tsx`
+- [X] T061 [US6] Verify badge recomputation after save uses active entries only in `apps/frontend/src/domain/pendingReminders.ts` and `apps/frontend/src/app/shell/RemindersBadge.tsx`
 
 **Checkpoint**: US6 tests pass; FR-010 satisfied
 
@@ -213,14 +213,14 @@ Yarn 1 workspaces monorepo per plan.md:
 
 ### Tests for User Story 7
 
-- [ ] T062 [P] [US7] Add seed tests (5 entries, work counts, no double-seed, post-seed filter) in `apps/frontend/src/__tests__/seed.demo.test.ts` (SC-008)
+- [X] T062 [P] [US7] Add seed tests (5 entries, work counts, no double-seed, post-seed filter) in `apps/frontend/src/__tests__/seed.demo.test.ts` (SC-008)
 
 ### Implementation for User Story 7
 
-- [ ] T063 [P] [US7] Implement `buildFiveEntries()` per FR-016 table in `apps/frontend/src/data/seed/demoJournalSeed.ts`
-- [ ] T064 [US7] Run seed batch in App bootstrap when `isStorageEmpty() && !hasSeeded` then `markSeeded` in `apps/frontend/src/App.tsx`
-- [ ] T065 [US7] Add subtle "Sample data" hint in `apps/frontend/src/features/journal/JournalPage.tsx`
-- [ ] T066 [US7] Implement empty state copy "Create your first entry" when no active entries in `apps/frontend/src/features/journal/JournalPage.tsx` (FR-013)
+- [X] T063 [P] [US7] Implement `buildFiveEntries()` per FR-016 table in `apps/frontend/src/data/seed/demoJournalSeed.ts`
+- [X] T064 [US7] Run seed batch in App bootstrap when `isStorageEmpty() && !hasSeeded` then `markSeeded` in `apps/frontend/src/App.tsx`
+- [X] T065 [US7] Add subtle "Sample data" hint in `apps/frontend/src/features/journal/JournalPage.tsx`
+- [X] T066 [US7] Implement empty state copy "Create your first entry" when no active entries in `apps/frontend/src/features/journal/JournalPage.tsx` (FR-013)
 
 **Checkpoint**: US7 tests pass; first-visit demo matches spec demonstration rules
 
@@ -230,12 +230,12 @@ Yarn 1 workspaces monorepo per plan.md:
 
 **Purpose**: Accessibility, entry-level toggles, responsive polish, CI scripts, quickstart validation
 
-- [ ] T067 [P] Add entry-level toggle all works done/undone per FR-007 in `apps/frontend/src/features/journal/EntryList.tsx`
-- [ ] T068 [P] Ensure keyboard focus and `<label>` associations on Journal form and shell menu in `apps/frontend/src/features/journal/EntryForm.tsx` and `apps/frontend/src/app/shell/SideMenu.tsx`
-- [ ] T069 [P] Verify responsive Journal columns and mobile menu in `apps/frontend/src/features/journal/journal.module.css` and `apps/frontend/src/app/shell/shell.module.css` (SC-007 layout)
-- [ ] T070 Wire root `yarn test` to `yarn workspaces run test` in `/Users/pavel/Personal/My_Projects/reminder/package.json`
-- [ ] T071 [P] Wire root `yarn lint` and `yarn format` scripts delegating to workspaces in `/Users/pavel/Personal/My_Projects/reminder/package.json`
-- [ ] T072 Run full P1 checklist in `specs/001-journal-app-shell/quickstart.md` and fix gaps
+- [X] T067 [P] Add entry-level toggle all works done/undone per FR-007 in `apps/frontend/src/features/journal/EntryList.tsx`
+- [X] T068 [P] Ensure keyboard focus and `<label>` associations on Journal form and shell menu in `apps/frontend/src/features/journal/EntryForm.tsx` and `apps/frontend/src/app/shell/SideMenu.tsx`
+- [X] T069 [P] Verify responsive Journal columns and mobile menu in `apps/frontend/src/features/journal/journal.module.css` and `apps/frontend/src/app/shell/shell.module.css` (SC-007 layout)
+- [X] T070 Wire root `yarn test` to `yarn workspaces run test` in `/Users/pavel/Personal/My_Projects/reminder/package.json`
+- [X] T071 [P] Wire root `yarn lint` and `yarn format` scripts delegating to workspaces in `/Users/pavel/Personal/My_Projects/reminder/package.json`
+- [X] T072 Run full P1 checklist in `specs/001-journal-app-shell/quickstart.md` and fix gaps
 
 ---
 
