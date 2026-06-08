@@ -1,0 +1,167 @@
+@import '../../styles/variables.css';
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  transition: margin-left var(--transition-fast);
+}
+
+.mainWithMenu {
+  margin-left: var(--menu-width);
+}
+
+.header {
+  height: var(--header-height);
+  background: linear-gradient(
+    to top,
+    var(--color-header-gradient-end),
+    var(--color-header-gradient-start)
+  );
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  padding: var(--space-sm);
+}
+
+.sideMenu {
+  width: var(--menu-width);
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-md) 0;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  z-index: 90;
+  overflow-y: auto;
+}
+
+.sideMenuOverlay {
+  position: fixed;
+  inset: 0;
+  top: var(--header-height);
+  background: var(--color-overlay);
+  z-index: 80;
+}
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+  display: block;
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.menuLink:hover,
+.menuLinkActive {
+  background: var(--color-tile-hover);
+}
+
+.badge {
+  background: var(--color-badge);
+  color: var(--color-badge-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  min-width: 1.25rem;
+  text-align: center;
+}
+
+.home {
+  padding: var(--space-xl);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.homeTitle {
+  font-size: var(--font-size-2xl);
+  margin: 0 0 var(--space-lg);
+}
+
+.tileGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: var(--space-md);
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background var(--transition-fast);
+}
+
+.tile:hover {
+  background: var(--color-tile-hover);
+}
+
+.tileIcon {
+  font-size: 2rem;
+}
+
+.tileLabel {
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mainWithMenu {
+    margin-left: 0;
+  }
+
+  .sideMenu {
+    z-index: 200;
+    box-shadow: var(--shadow-md);
+  }
+}

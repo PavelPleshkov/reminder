@@ -4,5 +4,11 @@ alwaysApply: true
 
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
-shell commands, and other important information, read the current plan
+shell commands, and other important information, read:
+
+- **Plan**: `specs/001-journal-app-shell/plan.md`
+- **Quickstart**: `specs/001-journal-app-shell/quickstart.md`
+- **Data model**: `specs/001-journal-app-shell/data-model.md`
+
+**Stack (Feature 001)**: Yarn 1 workspaces monorepo — `apps/frontend` (React 19, Vite, TypeScript strict, React Router, CSS Modules, Dexie), `packages/shared` (types, Zod, categories, JournalRepository interface), `apps/api` (README stub). Jest + RTL for tests. English UI only. Client-only IndexedDB persistence; no auth/API in 001.
 <!-- SPECKIT END -->
