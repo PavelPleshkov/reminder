@@ -15,11 +15,11 @@
 .main {
   flex: 1;
   min-width: 0;
-  transition: margin-left var(--transition-fast);
+  transition: margin-right var(--transition-fast);
 }
 
 .mainWithMenu {
-  margin-left: var(--menu-width);
+  margin-right: var(--menu-width);
 }
 
 .header {
@@ -61,7 +61,7 @@
   padding: var(--space-md) 0;
   position: fixed;
   top: var(--header-height);
-  left: 0;
+  right: 0;
   bottom: 0;
   z-index: 90;
   overflow-y: auto;
