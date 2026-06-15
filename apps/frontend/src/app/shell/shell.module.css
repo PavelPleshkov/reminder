@@ -57,7 +57,7 @@
 .sideMenu {
   width: var(--menu-width);
   background: var(--color-surface);
-  border-right: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
   padding: var(--space-md) 0;
   position: fixed;
   top: var(--header-height);
